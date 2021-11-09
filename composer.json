@@ -2,7 +2,7 @@
     "type": "project",
     "name": "da/portfolio",
     "description": "Outil de portfolio pour les B.U.T. des IUT",
-    "license": "MIT-2.0",
+    "license": "MPL-2.0",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
