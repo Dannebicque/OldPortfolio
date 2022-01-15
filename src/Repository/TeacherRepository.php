@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Etudiant;
+use App\Entity\Teacher;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
@@ -10,16 +10,16 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 
 /**
- * @method Etudiant|null find($id, $lockMode = null, $lockVersion = null)
- * @method Etudiant|null findOneBy(array $criteria, array $orderBy = null)
- * @method Etudiant[]    findAll()
- * @method Etudiant[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Teacher|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Teacher|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Teacher[]    findAll()
+ * @method Teacher[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class EtudiantRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
+class TeacherRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Etudiant::class);
+        parent::__construct($registry, Teacher::class);
     }
 
     /**
@@ -27,7 +27,7 @@ class EtudiantRepository extends ServiceEntityRepository implements PasswordUpgr
      */
     public function upgradePassword(PasswordAuthenticatedUserInterface $user, string $newHashedPassword): void
     {
-        if (!$user instanceof Etudiant) {
+        if (!$user instanceof Teacher) {
             throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', \get_class($user)));
         }
 
@@ -37,15 +37,15 @@ class EtudiantRepository extends ServiceEntityRepository implements PasswordUpgr
     }
 
     // /**
-    //  * @return Etudiant[] Returns an array of Etudiant objects
+    //  * @return Personnel[] Returns an array of Personnel objects
     //  */
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.exampleField = :val')
             ->setParameter('val', $value)
-            ->orderBy('e.id', 'ASC')
+            ->orderBy('p.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
@@ -54,10 +54,10 @@ class EtudiantRepository extends ServiceEntityRepository implements PasswordUpgr
     */
 
     /*
-    public function findOneBySomeField($value): ?Etudiant
+    public function findOneBySomeField($value): ?Personnel
     {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
             ->getOneOrNullResult()

@@ -8,9 +8,9 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @ORM\Entity(repositoryClass=PersonnelRepository::class)
+ * @ORM\Entity(repositoryClass=TeacherRepository::class)
  */
-class Personnel extends Utilisateur
+class Teacher extends User
 {
     /**
      * @ORM\Id
