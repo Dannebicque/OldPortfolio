@@ -3,7 +3,7 @@
     "name": "da/portfolio",
     "description": "Outil de portfolio pour les B.U.T. des IUT",
     "license": "MPL-2.0",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
         "php": ">=7.2.5",
@@ -24,7 +24,9 @@
         "symfony/proxy-manager-bridge": "5.4.*",
         "symfony/runtime": "5.4.*",
         "symfony/security-bundle": "5.4.*",
+        "symfony/translation": "5.4.*",
         "symfony/twig-bundle": "5.4.*",
+        "symfony/ux-turbo": "^2.0",
         "symfony/validator": "5.4.*",
         "symfony/webpack-encore-bundle": "^1.12",
         "symfony/yaml": "5.4.*",
